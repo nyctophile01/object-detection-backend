@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Object Detection App</title>
+</head>
+<body>
+  <h1>Upload an Image</h1>
+  <form action="http://127.0.0.1:5000/detect" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required />
+    <button type="submit">Detect</button>
+  </form>
+</body>
+</html>
