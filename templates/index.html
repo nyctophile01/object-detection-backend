@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Detection App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Object Detection</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Detect</button>
+        </form>
+        <div id="preview">
+            <h3>Result:</h3>
+            <img id="result-image" src="" alt="Detection result will appear here">
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('upload-form');
+        const resultImage = document.getElementById('result-image');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const response = await fetch('/detect', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                resultImage.src = url;
+            } else {
+                alert("Detection failed. Make sure the image is valid.");
+            }
+        });
+    </script>
+</body>
+</html>

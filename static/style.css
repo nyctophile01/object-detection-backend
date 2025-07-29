@@ -1,0 +1,56 @@
+/* Background image for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("background.jpg");  /* <-- put your image inside static/ */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling the container that holds your upload form */
+.container {
+    background: rgba(255, 255, 255, 0.9);  /* translucent white background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 400px;
+    text-align: center;
+}
+
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form input[type="file"] {
+    margin-bottom: 15px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #4338ca;
+}
+
+#preview {
+    margin-top: 20px;
+}
+
+#result-image {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}

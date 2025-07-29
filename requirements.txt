@@ -1,0 +1,9 @@
+flask
+ultralytics
+opencv-python
+torch
+torchvision
+pillow
+numpy
+matplotlib
+requests
